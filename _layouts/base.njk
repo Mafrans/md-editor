@@ -1,8 +1,23 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
+    <style>
+      body[dsd-pending] {
+        display: none;
+      }
+    </style>
+    <script>
+      if (HTMLTemplateElement.prototype.hasOwnProperty("shadowRoot")) {
+        // This browser has native declarative shadow DOM support, so we can
+        // allow painting immediately.
+        document.body.removeAttribute("dsd-pending");
+      }
+    </script>
   </head>
-  <body>
-    {{ content | safe }}
+
+  <body dsd-pending>
+    {{content | safe}}
+
+    <script src="bootup.js"></script>
   </body>
 </html>

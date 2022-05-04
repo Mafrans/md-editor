@@ -12,8 +12,15 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@lit-labs/eleventy-plugin-lit": "^0.2.1",
     "concurrently": "^7.1.0",
+    "esbuild": "^0.14.38",
+    "glob": "^8.0.1",
     "onchange": "^7.1.0",
     "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "@webcomponents/template-shadowroot": "^0.1.0",
+    "lit": "^2.2.3"
   }
 }
