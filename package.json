@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "format": "prettier --write --ignore-unknown '**/*'",
+    "format:watch": "onchange '**/*' -- prettier --write --ignore-unknown {{changed}}",
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "dev": "concurrently 'npm run serve' 'npm run format:watch'"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1"
+    "@11ty/eleventy": "^1.0.1",
+    "concurrently": "^7.1.0",
+    "onchange": "^7.1.0",
+    "prettier": "^2.6.2"
   }
 }
