@@ -1,0 +1,5 @@
+[[overrides]]
+files = "**/*.njk"
+
+[overrides.options]
+parser = "html"
