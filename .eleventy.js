@@ -1,8 +1,6 @@
 const config = (eleventy) => ({
-  return: {
-    dir: {
-      layouts: "_layouts",
-    },
+  dir: {
+    layouts: "_layouts",
   },
 });
 
