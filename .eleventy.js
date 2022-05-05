@@ -1,10 +1,9 @@
 const litPlugin = require("@lit-labs/eleventy-plugin-lit");
 const esbuild = require("esbuild");
-const glob = require("glob");
 
 const buildComponents = () =>
   esbuild.buildSync({
-    entryPoints: glob.sync("_components/**/*.ts"),
+    entryPoints: ["_components/index.ts"],
     bundle: true,
     outfile: "_site/_components/index.js",
   });
@@ -17,8 +16,10 @@ const buildBootupScript = () =>
   });
 
 module.exports = (eleventy) => {
-  buildComponents();
-  buildBootupScript();
+  eleventy.on("eleventy.before", () => {
+    buildComponents();
+    buildBootupScript();
+  });
 
   eleventy.addPlugin(litPlugin, {
     mode: "worker",

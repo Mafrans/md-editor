@@ -6,6 +6,8 @@ if (!HTMLTemplateElement.prototype.hasOwnProperty("shadowRoot")) {
   document.body.removeAttribute("dsd-pending");
 }
 
+console.log(litHydrateSupportInstalled);
+
 (litHydrateSupportInstalled as Promise<void>).then(
   () => import("./_site/_components/index.js")
 );

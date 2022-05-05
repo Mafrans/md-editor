@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-@customElement("hello-world")
+@customElement("x-hello-world")
 class HelloWorld extends LitElement {
   static styles = css`
     b {
