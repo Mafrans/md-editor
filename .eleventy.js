@@ -27,6 +27,7 @@ module.exports = (eleventy) => {
   });
 
   eleventy.addWatchTarget("_components");
+  eleventy.addPassthroughCopy("_assets");
 
   return {
     dir: {
